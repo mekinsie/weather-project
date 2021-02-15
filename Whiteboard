@@ -1,0 +1,24 @@
+Primary goals:
+- Take user input for location
+- Convert that location to lat & long through  API_OPENCAGE
+- Plug opencage.response into API_WEATHER.
+- Collect specific data from weatherResponse & display on HTML
+
+Minimum viable product:
+- Data for a single location
+
+Additional: 
+- Add multiple locations to compare
+
+Will need:
+2 services(separate files): one for OpenCage call, other for Weather call
+
+
+USER INTERFACE:
+- Form (input city)
+- If user adds more cities, display results in a grid (to compare(columns))
+
+Additional stretch features:
+- Add location images, flag
+- Add gipgy based on daily weather
+- search pictures https://pixabay.com/
