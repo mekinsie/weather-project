@@ -9,6 +9,6 @@ export default class OpenCageService {
       })
       .catch(function (error) {
         return error;
-      })
+      });
   }
 }

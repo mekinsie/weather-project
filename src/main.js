@@ -9,10 +9,10 @@ import OpenCageService from './services/open-cage-service.js';
 //   $('.display-weather').html(response);
 // }
 
-// tempConversion(function(temp){
-//   temp -= 273.15
-//   return temp;
-// })
+function tempConversion(temp){
+  let convertTemp = (1.8*(temp - 273) + 32);
+  return convertTemp;
+}
 
 $(document).ready(function () {
   $(".location-form").submit(function (event) {
@@ -27,14 +27,33 @@ $(document).ready(function () {
         console.log(weatherForecastResponse);
 
         for (let i=0; i < weatherForecastResponse.daily.length; i ++){
-          let unixTimestamp = weatherForecastResponse.daily[i].dt
-          let date = new Date(unixTimestamp*1000);
-          $('.display-forecast').append(`${date} <br>`);
-        $('.display-forecast').append(`Temperature: ${weatherForecastResponse.daily[i].temp.day} <br>`);
+          let unixTimestamp = weatherForecastResponse.daily[i].dt;
+          let date = [];
+          for(let i=0; i < 4; i++){
+            date.push(`${new Date(unixTimestamp*1000).toDateString().split(' ')[i]}`);
+          }
+          let stringDate = date.join(" ");
+  
+          let sunrise = weatherForecastResponse.daily[i].sunrise;
+          let sunriseTime = (new Date(sunrise*1000).toString().split(' ')[4]);
+
+          let sunset = weatherForecastResponse.daily[i].sunset;
+          let sunsetTime = (new Date(sunset*1000).toString().split(' ')[4]);
+          
+          // let temp = weatherForecastResponse.daily[i].temp.day;
+          let temp = await (weatherForecastResponse.daily[i].temp.day)
+          let convertTemp = Math.round(tempConversion(temp));
+          let forecast = await weatherForecastResponse.daily[i].weather[0].description;
+
+          $('.display-forecast').append(`${stringDate} <br>`);
+          $('.display-forecast').append(`Temperature: ${convertTemp}°F <br>`);
+          $('.display-forecast').append(`Sunrise: ${sunriseTime}<br>`);
+          $('.display-forecast').append(`Sunset: ${sunsetTime}<br>`);
+          $('.display-forecast').append(`Forecast: ${forecast}<br><br>`);
         }
       })
       .catch(function (error) {
-        return (error)
+        return (error);
       });
   });
 });

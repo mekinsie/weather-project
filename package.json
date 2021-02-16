@@ -32,6 +32,6 @@
   "dependencies": {
     "bootstrap": "^4.6.0",
     "jquery": "^3.5.1",
-    "popper.js": "^1.16.1"
+    "poppere.js": "^1.16.1"
   }
 }
