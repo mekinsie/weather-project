@@ -9,6 +9,10 @@ let displayWeatherResponse = (response) => {
   $('.display-weather').html(response);
 }
 
+tempConversion(function(temp){
+  temp -= 273.15
+  return temp;
+})
 
 $(document).ready(function () {
   $(".location-form").submit(function (event) {
