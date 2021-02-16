@@ -1,5 +1,5 @@
 export default class OpenWeatherService {
-  static getWeather(lat, lon) {
+  static getWeatherForecast(lat, lon) {
     return fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.API_WEATHER_KEY}`)
     .then(function(response){
       if (!response.ok) {

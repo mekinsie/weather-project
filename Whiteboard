@@ -16,9 +16,38 @@ Will need:
 
 USER INTERFACE:
 - Form (input city)
+- Specify how many days to display
 - If user adds more cities, display results in a grid (to compare(columns))
+
 
 Additional stretch features:
 - Add location images, flag
 - Add gipgy based on daily weather
 - search pictures https://pixabay.com/
+
+
+2/16 Tuesday: Minimum viable product
+- which data attributes to grab (temp, wind, rain in mm, clouds(unit?), weather(main: rain, description: moderate rain))
+- create cities class
+
+2/17 Wednesday: Add optional features
+- add features
+- create presentation (each person should talk & explain once)
+
+
+Historical Service:
+static getWeatherHistorical(lat, lon) {
+    return fetch(`https://api.openweathermap.org/data/2.5/onecall/timemachine?lat=${lat}&lon=${lon}&dt=${Date.now()}&appid=7d250ee542021fb05fe48dc213190313`)
+    .then(function(response){
+      if (!response.ok) {
+        throw Error(response);
+      }
+      return response.json();
+    })
+    .catch(function(error) {
+      return Error(error.message);
+    })
+  }
+Main.js;
+  let weatherHistoricalResponse = await OpenWeatherService.getWeatherHistorical(coordResponse.results[0].geometry.lat, coordResponse.results[0].geometry.lng);
+        console.log(weatherHistoricalResponse);

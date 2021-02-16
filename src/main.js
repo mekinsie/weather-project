@@ -5,14 +5,14 @@ import './css/styles.css';
 import OpenWeatherService from './services/openweather-service.js';
 import OpenCageService from './services/open-cage-service.js';
 
-let displayWeatherResponse = (response) => {
-  $('.display-weather').html(response);
-}
+// let displayWeatherForecastResponse = (response) => {
+//   $('.display-weather').html(response);
+// }
 
-tempConversion(function(temp){
-  temp -= 273.15
-  return temp;
-})
+// tempConversion(function(temp){
+//   temp -= 273.15
+//   return temp;
+// })
 
 $(document).ready(function () {
   $(".location-form").submit(function (event) {
@@ -23,14 +23,21 @@ $(document).ready(function () {
         if (coordResponse instanceof Error) {
           throw Error(`OpenCage API error: ${coordResponse.message}`);
         }
-        let weatherResponse = await OpenWeatherService.getWeather(coordResponse.results[0].geometry.lat, coordResponse.results[0].geometry.lng);
-        console.log(weatherResponse);
-        displayWeatherResponse(weatherResponse.daily[0].temp.day);
+        let weatherForecastResponse = await OpenWeatherService.getWeatherForecast(coordResponse.results[0].geometry.lat, coordResponse.results[0].geometry.lng);
+        console.log(weatherForecastResponse);
+
+        for (let i=0; i < weatherForecastResponse.daily.length; i ++){
+          let unixTimestamp = weatherForecastResponse.daily[i].dt
+          let date = new Date(unixTimestamp*1000);
+          $('.display-forecast').append(`${date} <br>`);
+        $('.display-forecast').append(`Temperature: ${weatherForecastResponse.daily[i].temp.day} <br>`);
+        }
       })
       .catch(function (error) {
         return (error)
       });
-      
   });
 });
+
+
 
