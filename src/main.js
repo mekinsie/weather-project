@@ -69,7 +69,7 @@ $(document).ready(function () {
       $('#city-limit').text("You have reached the city search limit.")
     }
   });
-});
+});   
 
 
 
