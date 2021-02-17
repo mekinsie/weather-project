@@ -3,11 +3,17 @@
 <head>
 </head>
 <body>
-  <form class="location-form">
-    <label for="location">Please enter a location:</label>
-    <input id= "location" type="text">
-    <input type="submit" id="submit">
-  </form>
-  <div class="display-forecast"></div>
-</body>
+  <h1>Weather Comparison</h1>
+  <div class="container">
+    <div id="city-limit"></div>
+    <p>You can search up to four cities.</p>
+    <form class="location-form">
+      <label for="location">Please enter a location:</label>
+      <input id= "location" type="text" required>
+      <input type="submit" id="submit">
+    </form>
+  </div>
+  <div class="jumbotron">
+  <div class="display-forecast row"></div>
+  </body>
 </html>

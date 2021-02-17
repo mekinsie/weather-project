@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:wght@300&display=swap');
+body {
+  font-family: 'Newsreader', serif;
+}
+.box-style{
+  background-color: grey;
+  margin:10px;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+}
+.row {
+  display: flex; /* equal height of the children */
+}
+.col {
+  flex: 1; /* additionally, equal width */
+  padding: 1em;
+  border: solid;
+width: 30%;
+}
+.display-forecast {
+  justify-content: center;  
+}
+
+.container {
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#submit {
+  border-radius: 10px;
+}
