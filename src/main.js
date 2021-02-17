@@ -48,7 +48,7 @@ $(document).ready(function () {
       OpenCageService.getCoord(cityName)
         .then(async function (coordResponse) {
           if (coordResponse instanceof Error) {
-            throw Error(`OpenCage API error: ${coordResponse.message}`);
+            // throw Error();
           }
           let weatherForecastResponse = await OpenWeatherService.getWeatherForecast(coordResponse.results[0].geometry.lat, coordResponse.results[0].geometry.lng);
           console.log(weatherForecastResponse);
@@ -83,9 +83,12 @@ $(document).ready(function () {
             checkForecastMain(forecastMain);
           }
         })
-        .catch(function (error) {
-          console.log(error);
-          $('.display-forecast').append(error);
+        .catch(function () {
+          $("#invalidCity").empty();
+          $("#invalidCity").append("Please enter a valid location.");
+          $(`.new-${count}`).remove();
+          count -= 1;
+          console.log(count);
         });
     }
     else{
