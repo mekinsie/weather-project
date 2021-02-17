@@ -5,28 +5,46 @@ import './css/styles.css';
 import OpenWeatherService from './services/openweather-service.js';
 import OpenCageService from './services/open-cage-service.js';
 
-// let displayWeatherForecastResponse = (response) => {
-//   $('.display-weather').html(response);
-// }
+function checkForecastMain(forecastMain){
+  if (forecastMain === "Rain" ){
+    $(`.new-${count}`).append('<img src="../assets/images/rain.png" alt="rain" height="50px"><br><br>');
+  }
+  else if (forecastMain === "Drizzle"){
+    $(`.new-${count}`).append('<img src="../assets/images/drizzle.png" alt="drizzle" height="50px"><br><br>');
+  }
+  else if (forecastMain === "Clear"){
+    $(`.new-${count}`).append('<img src="../assets/images/sunny.png" alt="sunny" height="50px"><br><br>');
+  }
+  else if (forecastMain === "Snow"){
+    $(`.new-${count}`).append('<img src="../assets/images/snow.png" alt="snow" height="50px"><br><br>');
+  }
+  else if (forecastMain === "Thunderstorm"){
+    $(`.new-${count}`).append('<img src="../assets/images/lightning.png" alt="thunderstorm." height="50px"><br><br>');
+  }
+  else if (forecastMain === "Clouds"){
+    $(`.new-${count}`).append('<img src="../assets/images/cloudy.png" alt="clouds" height="50px"><br><br>');
+  }
+}
+
+let count = 0;
 
 function tempConversion(temp){
   let convertTemp = (1.8*(temp - 273) + 32);
   return convertTemp;
 }
 function createDiv(cityName){
-  $('.display-forecast').append(`<div class='new-${cityName} box-style col-2'></div>`);
-  $(`.new-${cityName}`).append(`<strong>${cityName}</strong> <br><br>`);
+  $('.display-forecast').append(`<div class='new-${count} box-style col-2'></div>`);
+  $(`.new-${count}`).append(`<strong>${cityName}</strong> <br><br>`);
 }
 
 $(document).ready(function () {
-  let count = 0;
   $(".location-form").submit(function (event) {
     event.preventDefault();
     count +=1;
     if (count <= 4){
-    let cityName = ($('#location').val()).toUpperCase();
-    createDiv(cityName);
-    console.log(count);
+      let cityName = ($('#location').val()).toUpperCase();
+      createDiv(cityName);
+      console.log(count);
       OpenCageService.getCoord(cityName)
         .then(async function (coordResponse) {
           if (coordResponse instanceof Error) {
@@ -53,20 +71,25 @@ $(document).ready(function () {
             let temp = await (weatherForecastResponse.daily[i].temp.day);
             let convertTemp = Math.round(tempConversion(temp));
             let forecast = await weatherForecastResponse.daily[i].weather[0].description;
-            $(`.new-${cityName}`).append(`${stringDate} <br>`);
-            $(`.new-${cityName}`).append(`Temperature: ${convertTemp}°F <br>`);
-            $(`.new-${cityName}`).append(`Sunrise: ${sunriseTime}<br>`);
-            $(`.new-${cityName}`).append(`Sunset: ${sunsetTime}<br>`);
-            $(`.new-${cityName}`).append(`Forecast: ${forecast}<br><br>`);
-      }
-      })
-      .catch(function (error) {
-        console.log(error);
-        $('.display-forecast').append(error);
-      });
+            let forecastMain = await weatherForecastResponse.daily[i].weather[0].main;
+            
+            $(`.new-${count}`).append(`${stringDate} <br>`);
+            $(`.new-${count}`).append(`Temperature: ${convertTemp}°F <br>`);
+            $(`.new-${count}`).append(`Sunrise: ${sunriseTime}<br>`);
+            $(`.new-${count}`).append(`Sunset: ${sunsetTime}<br>`);
+            $(`.new-${count}`).append(`Forecast: ${forecast}<br>`);
+            console.log(forecast);
+            console.log(forecastMain);
+            checkForecastMain(forecastMain);
+          }
+        })
+        .catch(function (error) {
+          console.log(error);
+          $('.display-forecast').append(error);
+        });
     }
     else{
-      $('#city-limit').text("You have reached the city search limit.")
+      $('#city-limit').text("You have reached the city search limit.");
     }
   });
 });   
