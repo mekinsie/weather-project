@@ -1,24 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <title>Weather Comparison</title>
 </head>
 
 <body>
-
+  <h1>Weather Comparison</h1>
   <div class="container">
-    <h1>Weather Comparison</h1>
     <div id="city-limit"></div>
-    <p>You can search up to four cities.</p>
-    <form class="location-form">
-      <label for="location">Please enter a location:</label>
-      <input id= "location" type="text" required>
-      <input type="submit" id="submit">
-      <div id="invalidCity"></div>
-    </form>
+    <div class="defaultDisplay">
+      <form class="location-form">
+        <input id="location" type="text" placeholder="Enter City Name" required>
+        <button type="submit" id="submit" class="btn">Submit</button>
+        <button type="click" id="restart" class="btn">Clear</button>
+        <div id="invalidCity"></div>
+      </form>
+      <div class="h6Div"><h6>You can search up to four cities.</h6></div>
+    </div>
   </div>
   <div class="jumbotron">
     <div class="display-forecast row"></div>
   </div>
-  </body>
+  <div class="hidden">
+    <img src="assets/images/cloudy.png" alt="cloudy" height="50px" />
+    <img src="assets/images/drizzle.png" alt="drizzle" height="50px" />
+    <img src="assets/images/lightning.png" alt="lightning" height="50px" />
+    <img src="assets/images/partlycloudy.png" alt="partlycloudy" height="50px" />
+    <img src="assets/images/rain.png" alt="rain" height="50px" />
+    <img src="assets/images/snow.png" alt="snow" height="50px" />
+    <img src="assets/images/sunny.png" alt="sunny" height="50px" />
+  </div>
+</body>
+
 </html>

@@ -3,6 +3,23 @@
 body {
   font-family: 'Newsreader', serif;
 }
+
+.jumbotron {
+  margin: 10%;
+  margin-top: 40px;
+  height: 80%;
+  display:none;
+}
+
+.h3Header{
+  padding-top:15px;
+}
+
+p {
+  margin:0%;
+  padding-left:0%;
+}
+
 .box-style{
   background-color: grey;
   margin:10px;
@@ -10,37 +27,172 @@ body {
   border-radius: 10px;
   text-align: center;
   color: white;
+  box-shadow: 8px -6px  rgb(255, 203, 144);
 }
+
 .row {
   display: flex; /* equal height of the children */
 }
+
 .col {
   flex: 1; /* additionally, equal width */
   padding: 1em;
   border: solid;
-width: 30%;
+  width: 30%;
 }
+
 .display-forecast {
-  justify-content: center;  
+  justify-content: center;
+}
+
+img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+form.location-form {
+  display: block;
+  width: 50%;
+  margin:auto;
+}
+
+div.defaultDisplay {
+  width: 100%;
+  padding: 0;
 }
 
 .container {
-  margin-top: 50px;
   font-weight: bold;
+  width: 100%;
+  margin: auto;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin: auto;
+  margin-top: 40px;
+  font-size: 70px;
   color: rgb(236, 85, 15);
   font-weight: bold;
+  margin-bottom: 55px;
+}
+
+.h6Div{
+  width: 100%;
+  margin:auto;
+  margin-top:20px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+.defaultDisplay {
+  display: block;
+  width: 100%;
+  margin:auto;
+  margin-top:20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+h6 {
+  margin-top:20px;
+  width: 100%;
+  margin:auto;
+  text-align: center;
 }
 
 #submit {
   border-radius: 10px;
-} 
+  background-color:rgb(255, 218, 175);
+  color: rgb(197, 67, 7);
+}
+
+#restart {
+  border-radius: 10px;
+  background-color: rgb(228, 96, 35);
+  color: white;
+}
+
+#submit:hover {
+  background-color: rgb(255, 185, 104);;
+  color: white;
+}
+
+#restart:hover {
+  background-color:rgb(129, 41, 0);
+}
 
 #invalidCity  {
   color: red;
   size: 30px;
+}
+
+.key {
+  color: rgb(255, 203, 144);
+}
+
+#city-name{
+  margin-top: 10px;
+  font-size: large;
+  font-size: 20px;
+  font-weight: 2000;
+}
+
+#city-limit{
+  color:red;
+}
+
+.new-1 {
+  display: none;
+}
+
+.new-2 {
+  display: none;
+}
+
+.new-3 {
+  display: none;
+}
+
+.new-4 {
+  display: none;
+}
+
+.center{
+  text-align: center;
+}
+
+.box-style{
+  text-align: left;
+}
+
+.dateClass{
+  text-align: center;
+}
+
+.box-style p{
+  text-align: center;
+}
+
+div.imgCenter {
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(228, 228, 228, 0.3);
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.valueLeft {
+  float: right;
+  text-align: left;
+  /* align-items: flex-start; */
+}
+
+.hidden {
+  display: none;
 }
