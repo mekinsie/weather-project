@@ -7,22 +7,22 @@ import OpenCageService from './services/open-cage-service.js';
 
 function checkForecastMain(forecastMain) {
   if (forecastMain === "Rain") {
-    $(`.new-${count}`).append('<img src="../assets/images/rain.png" alt="rain" height="50px"><br> <span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/rain.png" alt="drizzle" height="50px"/><br><span class="center">______________________</span><br><br>');
   }
   else if (forecastMain === "Drizzle") {
-    $(`.new-${count}`).append('<img src="../assets/images/drizzle.png" alt="drizzle" height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/drizzle.png" alt="drizzle" height="50px"/><br><span class="center">______________________</span><br><br>');
   }
   else if (forecastMain === "Clear") {
-    $(`.new-${count}`).append('<img src="../assets/images/sunny.png" alt="sunny" height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/sunny.png" alt="sunny" height="50px"/><br><span class="center">______________________</span><br><br>');
   }
   else if (forecastMain === "Snow") {
-    $(`.new-${count}`).append('<img src="../assets/images/snow.png" alt="snow" height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/snow.png" alt="snow" height="50px"/><br><span class="center">______________________</span><br><br>');
   }
   else if (forecastMain === "Thunderstorm") {
-    $(`.new-${count}`).append('<img src="../assets/images/lightning.png" alt="thunderstorm." height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/lightning.png" alt="thunderstorm." height="50px"><br><span class="center">______________________</span><br><br>');
   }
   else if (forecastMain === "Clouds") {
-    $(`.new-${count}`).append('<img src="../assets/images/cloudy.png" alt="clouds" height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<img src="assets/images/cloudy.png" alt="clouds" height="50px"/><br><span class="center">______________________</span><br><br>');
   }
 }
 
@@ -91,7 +91,7 @@ $(document).ready(function () {
           $(`.new-${count}`).slideDown("slow");
           if (count === 4) {
             buttonObj.disabled = true;
-            buttonObj.textContent = "Submitted";
+            buttonObj.textContent = "Max Limit";
           }
           else {
             // Do nothing
@@ -111,6 +111,3 @@ $(document).ready(function () {
     }
   });
 });
-
-
-
