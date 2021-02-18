@@ -7,22 +7,22 @@ import OpenCageService from './services/open-cage-service.js';
 
 function checkForecastMain(forecastMain) {
   if (forecastMain === "Rain") {
-    $(`.new-${count}`).append('<img src="assets/images/rain.png" alt="drizzle" height="50px"/><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append(`<div class="imgCenter"> <img src="assets/images/rain.png" alt="drizzle" height="50px"/></div>`);
   }
   else if (forecastMain === "Drizzle") {
-    $(`.new-${count}`).append('<img src="assets/images/drizzle.png" alt="drizzle" height="50px"/><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<div class="imgCenter"> <img src="assets/images/drizzle.png" alt="drizzle" height="50px"/></div>');
   }
   else if (forecastMain === "Clear") {
-    $(`.new-${count}`).append('<img src="assets/images/sunny.png" alt="sunny" height="50px"/><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<div class="imgCenter"> <img src="assets/images/sunny.png" alt="sunny" height="50px"/></div>');
   }
   else if (forecastMain === "Snow") {
-    $(`.new-${count}`).append('<img src="assets/images/snow.png" alt="snow" height="50px"/><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<div class="imgCenter"> <img src="assets/images/snow.png" alt="snow" height="50px"/></div>');
   }
   else if (forecastMain === "Thunderstorm") {
-    $(`.new-${count}`).append('<img src="assets/images/lightning.png" alt="thunderstorm." height="50px"><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<div class="imgCenter"> <img src="assets/images/lightning.png" alt="thunderstorm." height="50px"></div>');
   }
   else if (forecastMain === "Clouds") {
-    $(`.new-${count}`).append('<img src="assets/images/cloudy.png" alt="clouds" height="50px"/><br><span class="center">______________________</span><br><br>');
+    $(`.new-${count}`).append('<div class="imgCenter"> <img src="assets/images/cloudy.png" alt="clouds" height="50px"/></div>');
   }
 }
 
@@ -34,10 +34,11 @@ function tempConversion(temp) {
 }
 function createDiv(cityName) {
   $('.display-forecast').append(`<div class='new-${count} box-style col-md-2'></div>`);
-  $(`.new-${count}`).append(`<p id="city-name"><strong>${cityName}</strong></p> <br>`);
+  $(`.new-${count}`).append(`<p id="city-name"><strong>${cityName}</p></strong> <br>`);
 }
 
 $(document).ready(function () {
+  $('.hidden').hide();
   var buttonObj = document.querySelector("button");
   $('#restart').click(() => {
     document.location.reload(true);       //Reload Page
@@ -78,11 +79,11 @@ $(document).ready(function () {
             let forecast = await weatherForecastResponse.daily[i].weather[0].description;
             let forecastMain = await weatherForecastResponse.daily[i].weather[0].main;
 
-            $(`.new-${count}`).append(`<strong>${stringDate}</strong> <br>`);
-            $(`.new-${count}`).append(`<span class ="key">Temperature:</span> ${convertTemp}°F <br>`);
-            $(`.new-${count}`).append(`<span class ="key">Sunrise:</span> ${sunriseTime}<br>`);
-            $(`.new-${count}`).append(`<span class ="key"> Sunset:</span> ${sunsetTime}<br>`);
-            $(`.new-${count}`).append(`<span class ="key">Forecast:</span> ${forecast}<br>`);
+            $(`.new-${count}`).append(`<div class="dateClass"><strong>${stringDate}</strong></div`);
+            $(`.new-${count}`).append(`<div><span class ="key center">Temperature:</span> <span class ="valueLeft">${convertTemp}°F </span></div>`);
+            $(`.new-${count}`).append(`<div><span class ="key center">Sunrise:</span> <span class ="valueLeft">${sunriseTime}</span></div>`);
+            $(`.new-${count}`).append(`<div><span class ="key center"> Sunset:</span> <span class ="valueLeft">${sunsetTime}</span></div>`);
+            $(`.new-${count}`).append(`<div><span class ="key center">Forecast:</span> <span class ="valueLeft">${forecast}</span></div>`);
             //console.log(forecast);
             //console.log(forecastMain);
             checkForecastMain(forecastMain);

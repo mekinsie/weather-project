@@ -44,19 +44,65 @@ p {
   justify-content: center;
 }
 
+img {
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+form.location-form {
+  display: block;
+  width: 50%;
+  margin:auto;
+}
+
+div.defaultDisplay {
+  width: 100%;
+  padding: 0;
+}
+
 .container {
   font-weight: bold;
-  margin-left: 10%;
-  margin-bottom: 20px;
-  padding-left: 0%;
   width: 100%;
+  margin: auto;
 }
 
 h1 {
   text-align: center;
+  margin: auto;
   margin-top: 40px;
+  font-size: 70px;
   color: rgb(236, 85, 15);
   font-weight: bold;
+  margin-bottom: 55px;
+}
+
+.h6Div{
+  width: 100%;
+  margin:auto;
+  margin-top:20px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+}
+
+.defaultDisplay {
+  display: block;
+  width: 100%;
+  margin:auto;
+  margin-top:20px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+h6 {
+  margin-top:20px;
+  width: 100%;
+  margin:auto;
+  text-align: center;
 }
 
 #submit {
@@ -91,6 +137,9 @@ h1 {
 
 #city-name{
   margin-top: 10px;
+  font-size: large;
+  font-size: 20px;
+  font-weight: 2000;
 }
 
 #city-limit{
@@ -115,6 +164,32 @@ h1 {
 
 .center{
   text-align: center;
+}
+
+.box-style{
+  text-align: left;
+}
+
+.dateClass{
+  text-align: center;
+}
+
+.box-style p{
+  text-align: center;
+}
+
+div.imgCenter {
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(228, 228, 228, 0.3);
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+
+.valueLeft {
+  float: right;
+  text-align: left;
+  /* align-items: flex-start; */
 }
 
 .hidden {
