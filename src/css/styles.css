@@ -3,6 +3,22 @@
 body {
   font-family: 'Newsreader', serif;
 }
+
+.jumbotron {
+  margin: 30px;
+  height: 80%;
+  display:none;
+}
+
+.h3Header{
+  padding-top:15px;
+}
+
+p {
+  margin:0%;
+  padding-left:0%;
+}
+
 .box-style{
   background-color: grey;
   margin:10px;
@@ -27,11 +43,14 @@ width: 30%;
 .container {
   margin-top: 50px;
   font-weight: bold;
+  margin-left: 30px;
+  padding-left: 0%;
+  width: 100%;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 15px;
   color: rgb(236, 85, 15);
   font-weight: bold;
 }
@@ -43,4 +62,11 @@ h1 {
 #invalidCity  {
   color: red;
   size: 30px;
+}
+
+.key {
+  color: rgb(255, 203, 144);
+}
+#city-name{
+  margin-top: 10px;
 }
