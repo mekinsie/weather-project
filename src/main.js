@@ -73,7 +73,7 @@ $(document).ready(function () {
             let forecast = await weatherForecastResponse.daily[i].weather[0].description;
             let forecastMain = await weatherForecastResponse.daily[i].weather[0].main;
             
-            $(`.new-${count}`).append(`${stringDate} <br>`);
+            $(`.new-${count}`).append(`<strong>${stringDate}</strong><br>`);
             $(`.new-${count}`).append(`Temperature: ${convertTemp}°F <br>`);
             $(`.new-${count}`).append(`Sunrise: ${sunriseTime}<br>`);
             $(`.new-${count}`).append(`Sunset: ${sunsetTime}<br>`);
