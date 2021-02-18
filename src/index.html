@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <title>Weather Comparison</title>
 </head>
@@ -10,13 +11,15 @@
     <div id="city-limit"></div>
     <h3 class="h3Header">You can search up to four cities.</h3>
     <form class="location-form">
-      <input id= "location" type="text" placeholder ="Enter City Name" required>
-      <input type="submit" id="submit">
+      <input id="location" type="text" placeholder="Enter City Name" required>
+      <button type="submit" id="submit" class="btn">Submit</button>
+      <button type="click" id="restart" class="btn">Clear</button>
       <div id="invalidCity"></div>
     </form>
   </div>
   <div class="jumbotron">
     <div class="display-forecast row"></div>
   </div>
-  </body>
+</body>
+
 </html>

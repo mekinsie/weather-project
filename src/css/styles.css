@@ -5,7 +5,8 @@ body {
 }
 
 .jumbotron {
-  margin: 30px;
+  margin: 10%;
+  margin-top: 40px;
   height: 80%;
   display:none;
 }
@@ -27,37 +28,57 @@ p {
   text-align: center;
   color: white;
 }
+
 .row {
   display: flex; /* equal height of the children */
 }
+
 .col {
   flex: 1; /* additionally, equal width */
   padding: 1em;
   border: solid;
-width: 30%;
+  width: 30%;
 }
+
 .display-forecast {
-  justify-content: center;  
+  justify-content: center;
 }
 
 .container {
-  margin-top: 50px;
   font-weight: bold;
-  margin-left: 30px;
+  margin-left: 10%;
+  margin-bottom: 20px;
   padding-left: 0%;
   width: 100%;
 }
 
 h1 {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 40px;
   color: rgb(236, 85, 15);
   font-weight: bold;
 }
 
 #submit {
   border-radius: 10px;
-} 
+  background-color:rgb(255, 218, 175);
+  color: rgb(197, 67, 7);
+}
+
+#restart {
+  border-radius: 10px;
+  background-color: rgb(228, 96, 35);
+  color: white;
+}
+
+#submit:hover {
+  background-color: rgb(255, 185, 104);;
+  color: white;
+}
+
+#restart:hover {
+  background-color:rgb(129, 41, 0);
+}
 
 #invalidCity  {
   color: red;
@@ -67,6 +88,31 @@ h1 {
 .key {
   color: rgb(255, 203, 144);
 }
+
 #city-name{
   margin-top: 10px;
+}
+
+#city-limit{
+  color:red;
+}
+
+.new-1 {
+  display: none;
+}
+
+.new-2 {
+  display: none;
+}
+
+.new-3 {
+  display: none;
+}
+
+.new-4 {
+  display: none;
+}
+
+.center{
+  text-align: center;
 }
