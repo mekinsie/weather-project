@@ -1,6 +1,6 @@
-# Historical 5-Day Weather
+# Weather Comparison
 
-#### Access weather information on the previous five days of a selected location
+#### Compare the weather for up to 4 locations. 
 
 #### By _**Mekinsie Callahan, Glen Buck, Salim Mayan, Kerry Lang, Nick Lindau**_
 
@@ -15,7 +15,7 @@
 * _npm_
 
 ## Description
-This website provides you with weather data on the previous five days for a specific location. You can select the location of choice and data such as daily precipitation in mm, temperatures, and wind will be displayed. 
+This website provides you with the ability to compare the weather forecast in different locations. You can search up to four cities.
 
 ## Setup/Installation Requirements
 Note: You need to have git and npm already installed to setup and install this project.
